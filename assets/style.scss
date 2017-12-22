@@ -1,0 +1,21 @@
+$boxBorder: dashed 2px green;
+.title {
+    text-align: center;
+    border: $boxBorder;
+}
+
+#game-area {
+    margin: 0 auto;
+    width: 1080px;
+    .player-box {
+        // width: 30%;
+        height: 400px;
+        display: inline-block;
+        border: $boxBorder;
+        .choice {
+            width: 75px;
+            height: 75px;
+            margin: 15px 0;
+        }
+    }
+}

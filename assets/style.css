@@ -1,0 +1,17 @@
+.title {
+  text-align: center;
+  border: dashed 2px green; }
+
+#game-area {
+  margin: 0 auto;
+  width: 1080px; }
+  #game-area .player-box {
+    height: 400px;
+    display: inline-block;
+    border: dashed 2px green; }
+    #game-area .player-box .choice {
+      width: 75px;
+      height: 75px;
+      margin: 15px 0; }
+
+/*# sourceMappingURL=style.css.map */
