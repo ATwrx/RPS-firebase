@@ -1,2 +1,4 @@
-.sass-cache/
-*.map
+*.swo
+*.swp 
+*.map 
+.sass-cache/*
