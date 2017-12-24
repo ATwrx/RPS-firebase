@@ -12,7 +12,8 @@ $boxBorder: dashed 2px green;
         height: 400px;
         display: inline-block;
         border: $boxBorder;
-        .choice {
+        .answer-choice {
+	    display: block;
             width: 75px;
             height: 75px;
             margin: 15px 0;

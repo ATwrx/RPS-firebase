@@ -9,7 +9,8 @@
     height: 400px;
     display: inline-block;
     border: dashed 2px green; }
-    #game-area .player-box .choice {
+    #game-area .player-box .answer-choice {
+      display: block;
       width: 75px;
       height: 75px;
       margin: 15px 0; }
