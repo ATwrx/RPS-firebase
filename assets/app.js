@@ -10,19 +10,52 @@ var config = {
 firebase.initializeApp(config)
 var database = firebase.database()
 
-var p1Selected, p2Selected
+const p1 = {
+    hasChosen: false,
+    choice: null
+}
+const p2 = {
+    hasChosen: false,
+    choice: null
+}
 $(document).on("click", ".answer-choice", function() {
-    var rps = $(this).attr("alt")
-    rps = rps.charAt(0).toUpperCase() + rps.slice(1)
+    let rps = $(this).attr("alt")
+    let rpsPretty = rps.charAt(0).toUpperCase() + rps.slice(1)
     if ($(this).attr("player") == "1") {
-        $("#player-one-selected-choice").html("<h5>" + rps + "</h5>")
-	return p1Selected = true
+        p1.choice = rps
+        $("#player-one-selected-choice").html("<h5>" + rpsPretty + "</h5>")
     } else {
-        $("#player-two-selected-choice").html("<h5>" + rps + "</h5>")
-	return p2selected = true
+        p2.choice = rps
+        $("#player-two-selected-choice").html("<h5>" + rpsPretty + "</h5>")
     }
 })
-function compare(p1Choice, p2Choice) {
-	//TODO: make switch case for answers
+
+function compare(p1.choice, p2.choice) {
+    if (choice1 === choice2) {
+        return "The result is a tie!";
+    }
+    if (choice1 === "rock") {
+        if (choice2 === "scissors") {
+            return "rock wins";
+        } else {
+            return "paper wins";
+        }
+    }
+    if (choice1 === "paper") {
+        if (choice2 === "rock") {
+            return "paper wins";
+        } else {
+            return "scissors wins";
+        }
+    }
+    if (choice1 === "scissors") {
+        if (choice2 === "rock") {
+            return "rock wins";
+        } else {
+            return "scissors wins";
+        }
+    }
 }
+
 //TODO: Add Firebase database calls, Add check for 2 players
+
