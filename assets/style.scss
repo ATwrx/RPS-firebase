@@ -1,12 +1,18 @@
-$boxBorder: dashed 2px green;
+$boxBorder: solid 2px #010;
 .title {
     text-align: center;
-    border: $boxBorder;
+    border-bottom: $boxBorder;
+    border-left: $boxBorder;
+    border-right: $boxBorder;
+
 }
 
 #game-area {
     margin: 0 auto;
     width: 1080px;
+    .selected {
+   	background: grey; 
+    }
     .player-box {
         // width: 30%;
         height: 400px;

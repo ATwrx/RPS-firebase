@@ -1,14 +1,18 @@
 .title {
   text-align: center;
-  border: dashed 2px green; }
+  border-bottom: solid 2px #010;
+  border-left: solid 2px #010;
+  border-right: solid 2px #010; }
 
 #game-area {
   margin: 0 auto;
   width: 1080px; }
+  #game-area .selected {
+    background: grey; }
   #game-area .player-box {
     height: 400px;
     display: inline-block;
-    border: dashed 2px green; }
+    border: solid 2px #010; }
     #game-area .player-box .answer-choice {
       display: block;
       width: 75px;
