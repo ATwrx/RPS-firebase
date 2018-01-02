@@ -19,38 +19,48 @@ const p2 = {
     choice: null
 }
 $(document).on("click", ".answer-choice", function() {
-    let rps = $(this).attr("alt") 
-     if($(this).attr("player") == 1) {
-	$(this).siblings().removeClass("selected")
+    let rps = $(this).attr("alt")
+    if ($(this).attr("player") == 1) {
+        $(this).siblings().removeClass("selected")
         p1.choice = rps
-	$(this).addClass("selected")
+        $(this).addClass("selected")
     } else {
-	$(this).siblings().removeClass("selected")
+        $(this).siblings().removeClass("selected")
         p2.choice = rps
-	$(this).addClass("selected")
+        $(this).addClass("selected")
     }
 })
 $(document).on("click", "#player-one-submit", function() {
     p1.hasChosen = true
     $("#player-one-submit").hide()
-    $("#player-one-selected-choice").html("<h5>" + p1.choice.charAt(0).toUpperCase() + p1.choice.slice(1)
-    + "</h5>")
+    $("#player-one-selected-choice").html("<h5>" + p1.choice.charAt(0).toUpperCase() + p1.choice.slice(1) + "</h5>")
     compare(p1.choice, p2.choice)
-    return p1.hasChosen 
+    return p1.hasChosen
 })
 
 $(document).on("click", "#player-two-submit", function() {
     p2.hasChosen = true
     $("#player-two-submit").hide()
-    $("#player-two-selected-choice").html("<h5>" + p2.choice.charAt(0).toUpperCase() + p2.choice.slice(1)+ "</h5>")
-    return p2.hasChosen 
+    $("#player-two-selected-choice").html("<h5>" + p2.choice.charAt(0).toUpperCase() + p2.choice.slice(1) + "</h5>")
+    compare(p1.choice, p2.choice)
+    return p2.hasChosen
+})
+$(document).on("click", "#reset", function() {
+    p1.hasChosen, p2.hasChosen = false
+    p1.choice, p2.choice = null
+    $(".answer-choice").removeClass("selected")
+    $("#player-one-submit").show()
+    $("#player-two-submit").show()
+    $("#battle-box").html("")
+    $("#player-one-selected-choice").html("")
+    $("#player-two-selected-choice").html("")
 })
 
 function compare(choice1, choice2) {
     let rBox = $("#battle-box")
     let $h4 = $("<h4>")
-    if (p1.hasChosen == false || p2.hasChosen == false){
-    return
+    if (p1.hasChosen == false || p2.hasChosen == false) {
+        return
     }
     if (choice1 == choice2) {
         $h4.text("The result is a tie!")
@@ -75,5 +85,4 @@ function compare(choice1, choice2) {
     }
     rBox.html($h4)
 }
-//TODO: Add Firebase database calls, Add check for 2 players
 
