@@ -85,6 +85,7 @@ function compare(choice1, choice2) {
                 $h4.text("Scissors wins")
             }
         }
-    rBox.html($h4)
+        rBox.html($h4)
     }
 }
+
